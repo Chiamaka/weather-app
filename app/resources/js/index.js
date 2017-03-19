@@ -1,0 +1,10 @@
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamaka');
+console.log('hello, im chiamak');
