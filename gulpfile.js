@@ -75,7 +75,9 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 //     );
 // });
 
-gulp.task('default', function(done){
-    runSequence('sass', 'browserSync', 'watch', done());
-});
+// gulp.task('default', function(done){
+//     runSequence('sass', 'browserSync', 'watch', done());
+// });
+
+gulp.task('default',['sass', 'browserSync', 'watch']);
 
