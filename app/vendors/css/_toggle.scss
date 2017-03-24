@@ -1,0 +1,95 @@
+//colors
+$color_black_haze_approx: #f6f6f6;
+$black_5: rgba(0, 0, 0, 0.05);
+$white:  white;
+$black_40: rgba(0, 0, 0, 0.4);
+$color_linen_approx: #fdefe4;
+$black_25: rgba(0, 0, 0, 0.25);
+$color_shark_approx: #282828;
+$color_rajah_approx: #f6b06f;
+$color_tango_approx: #f07d13;
+$black_70: rgba(0, 0, 0, 0.7);
+
+//fonts
+$font_0: PT Sans;
+$font_1: sans-serif;
+$font_2: Helvetica;
+$font_3: Arial;
+
+body {
+	padding: 50px;
+	background-color: $color_black_haze_approx;
+	font-size: 10px;
+}
+input[type=checkbox].toggle-switch {
+	display: none;
+	position: relative;
+	+ label {
+		position: absolute;
+		font-size: 20px;
+		width: 7em;
+		height: 1.8em;
+		background-color: $black_5;
+		border: 1px solid $white;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3px;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: inset 0 1px 5px $black_40;
+		outline: none;
+		.state {
+			width: 50%;
+			position: absolute;
+			top: 50%;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: translateY(-50%);
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: opacity 0.2s ease-out;
+			text-align: center;
+			z-index: 10;
+			opacity: 1;
+			color: $color_linen_approx;
+			font-family: $font_0, $font_1, $font_2, $font_3, $font_1;
+			font-size: 0.9em;
+			font-weight: bold;
+			//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			text-shadow: 0 1px $black_25;
+			&.two {
+				left: 50%;
+				opacity: 0.2;
+				color: $color_shark_approx;
+			}
+		}
+		&:after {
+			content: "";
+			//Instead of the line below you could use @include box-sizing($bs)
+			box-sizing: border-box;
+			position: absolute;
+			width: 3.5em;
+			height: 1.8em;
+			background: linear-gradient(180deg, $color_rajah_approx, $color_tango_approx);
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: inherit;
+			left: -0.07em;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: scale(0.91);
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: 0.15s ease-out;
+			border: 1px solid $black_70;
+		}
+	}
+	&:checked + label {
+		.state {
+			&.one {
+				opacity: 0.2;
+				color: $color_shark_approx;
+			}
+			&.two {
+				opacity: 1;
+				color: $color_linen_approx;
+			}
+		}
+		&:after {
+			left: 3.57em;
+		}
+	}
+}

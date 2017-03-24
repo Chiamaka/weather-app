@@ -1,0 +1,76 @@
+body {
+  padding: 50px;
+  background-color: #f6f6f6;
+  font-size: 10px; }
+
+input[type=checkbox].toggle-switch {
+  display: none;
+  position: relative; }
+  input[type=checkbox].toggle-switch + label {
+    position: absolute;
+    font-size: 20px;
+    width: 7em;
+    height: 1.8em;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid white;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4);
+    outline: none; }
+    input[type=checkbox].toggle-switch + label .state {
+      width: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: opacity 0.2s ease-out;
+      text-align: center;
+      z-index: 10;
+      opacity: 1;
+      color: #fdefe4;
+      font-family: PT Sans, sans-serif, Helvetica, Arial, sans-serif;
+      font-size: 0.9em;
+      font-weight: bold;
+      text-shadow: 0 1px rgba(0, 0, 0, 0.25); }
+      input[type=checkbox].toggle-switch + label .state.two {
+        left: 50%;
+        opacity: 0.2;
+        color: #282828; }
+    input[type=checkbox].toggle-switch + label:after {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      width: 3.5em;
+      height: 1.8em;
+      background: linear-gradient(180deg, #f6b06f, #f07d13);
+      border-radius: inherit;
+      left: -0.07em;
+      transform: scale(0.91);
+      transition: 0.15s ease-out;
+      border: 1px solid rgba(0, 0, 0, 0.7); }
+  input[type=checkbox].toggle-switch:checked + label .state.one {
+    opacity: 0.2;
+    color: #282828; }
+  input[type=checkbox].toggle-switch:checked + label .state.two {
+    opacity: 1;
+    color: #fdefe4; }
+  input[type=checkbox].toggle-switch:checked + label:after {
+    left: 3.57em; }
+
+.center {
+  display: flex;
+  justify-content: center; }
+
+.weather-stats {
+  text-align: center;
+  margin-top: 100px; }
+  .weather-stats .weather-icon {
+    font-size: 500%; }
+    .weather-stats .weather-icon .ofw-5x {
+      font-size: 4em; }
+  .weather-stats .weather-temp {
+    font-size: 600%; }
+  .weather-stats .weather-desc {
+    font-size: 200%; }
+
+footer p {
+  text-align: center;
+  font-size: 140%; }

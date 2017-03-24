@@ -9,6 +9,7 @@ const imagemin    = require('gulp-imagemin');
 const cache       = require('gulp-cache');
 const del         = require('del');
 const runSequence = require('run-sequence');
+const babel       = require('gulp-babel');
 
 /* BROWSERSYNC TASK */
 gulp.task('browserSync', function() {
@@ -34,6 +35,10 @@ gulp.task('sass', function() {
 gulp.task('useref', function(){
     return gulp.src('app/*.html')
     .pipe(useref())
+    //Translate es6 to es5 for uglify
+    .pipe(gulpIf('*.js', babel({
+        presets: ['es2015']
+    })))
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
     // Minifies only if it's a CSS file
@@ -59,12 +64,13 @@ gulp.task('clean-dist', function() {
     return del.sync('dist');
 });
 
+gulp.task('build', ['clean-dist', 'fonts', 'images', 'useref']);
 
 /* Gulp watch file - watches for changes to any file */
 gulp.task('watch', ['browserSync', 'sass'], function() {
     gulp.watch('app/resources/css/**/*.scss', ['sass']);
     gulp.watch('app/*.html', browserSync.reload);
-    gulp.watch(['app/resources/js/**/*.js', 'app/vendors/js/*.js', 'app/vendors/css/*.css'], browserSync.reload);
+    gulp.watch(['app/resources/js/**/*.js', 'app/vendors/js/*.js', 'app/vendors/css/*.scss'], browserSync.reload);
 });
 
 /* Build tasks */

@@ -1,0 +1,28 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.weather-stats {
+    text-align: center;
+    margin-top: 100px;
+    .weather-icon {
+        font-size: 500%;
+        .ofw-5x {
+            font-size: 4em;
+        }
+    }
+    .weather-temp {
+        font-size: 600%;
+    }
+    .weather-desc {
+        font-size: 200%;
+    }
+}
+
+footer{
+    p {
+        text-align: center;
+        font-size: 140%;
+    }
+}

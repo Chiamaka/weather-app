@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--build:css css/main.min.css-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+         <!--build:css css/main.min.css-->
         <link rel="stylesheet" href="resources/css/main.css">
         <!--endbuild-->
+        <title>Weather App</title>
     </head>
     
     <body>
-        
+        <div class="container">
+            <div class="center">
+                <div class="toggle-btns">
+                    <label style="display: block; margin-bottom: 5px;"></label>  
+                        <input type="checkbox" class="toggle-switch" id="toggle"/>  
+                        <label for="toggle">
+                            <span class="state one js--celsius">&#8451;</span>
+                            <span class="state two js--fahr">&#8457;</span>
+                        </label>
+                </div>
+            </div>
+            <br>
+            <div class="weather-stats">
+                <div class="weather-icon">
+                    Please wait
+                </div>
+                <div class="weather-desc">
 
+                </div>
+                <div class="weather-temp">
+                    
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Created by <a href="https://github.com/Chiamaka">Chiamaka</a></p>
+            <p>Sliding button: <a href="http://codepen.io/Q_D/pen/ENPOqo">Link</a></p>
+            <p>Weather API used: <a href="https://wunderground.com">Link</a></p>
+        </footer>
         <!--build:js js/main.min.js-->
         <script src="resources/js/index.js"></script>
         <!--endbuild-->
